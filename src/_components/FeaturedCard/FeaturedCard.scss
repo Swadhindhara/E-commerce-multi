@@ -1,0 +1,91 @@
+.featured_card{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    cursor: pointer;
+
+    &:hover{
+        .top{
+            .overlay{
+                opacity: 1;
+                visibility: visible;
+
+                .icon{
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            img{
+                transform: scale(1.1);
+            }
+        }
+    }
+
+
+    .top{
+        border: 1px solid #88c9fe;
+        border-radius: 10px;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+
+        .overlay{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #3b71de41;
+            top: 0;
+            left: 0;
+            border-radius: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+
+            .icon{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -20%);
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease;
+            }
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+            display: block;            
+            transition: all 0.3s ease-in-out;
+        }
+    }
+    .bottom{
+        h4{
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: #3b3434;
+
+            span{
+                font-weight: 500;
+            }
+        }
+
+        p{
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    }
+}
