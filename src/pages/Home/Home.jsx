@@ -28,15 +28,17 @@ import a19 from '../../assets/images/a19.webp'
 import a20 from '../../assets/images/a20.webp'
 import a21 from '../../assets/images/a21.webp'
 import a22 from '../../assets/images/a22.webp'
+import a23 from '../../assets/images/a23.webp'
 import b1 from '../../assets/images/b1.webp'
 import b2 from '../../assets/images/b2.webp'
 import b3 from '../../assets/images/b3.webp'
 import b4 from '../../assets/images/b4.webp'
 import b5 from '../../assets/images/b5.webp'
 import './Home.scss';
-import { FeaturedCard, SellerCard } from '@/_components';
+import { FeaturedCard, LatestProduct, SellerCard } from '@/_components';
 import { Link } from 'react-router-dom';
 import { LiaAngleRightSolid } from "react-icons/lia";
+import { Button } from '@/components/ui/button';
 const Home = () => {
   const featuredProducts = [
     {
@@ -161,6 +163,89 @@ const Home = () => {
     },
   ]
 
+  const dod = [
+    {
+      name: "Exquisite 18K White Gold Diamond Necklace Set",
+      image: a23,
+      mrp: "18,999",
+      price: "15,999",
+      discount: "-12%"
+    }
+  ]
+
+  const latestProduct = [
+    {
+      "name": "Edelbrock Cylinder Head",
+      "price": 720.00,
+      "original_price": 900.00,
+      "discount": "20%",
+      "image": a2
+    },
+    {
+      "name": "Combo Trailer Light Set",
+      "price": 35.00,
+      "original_price": null,
+      "discount": null,
+      "image": a3
+    },
+    {
+      "name": "Waterproof Seat Protector",
+      "price": 25.00,
+      "original_price": null,
+      "discount": null,
+      "image": a1
+    },
+    {
+      "name": "HP BOSS CRATE ENGINE",
+      "price": 2500.00,
+      "original_price": null,
+      "discount": null,
+      "image": a5
+    },
+    {
+      "name": "Car Interior LED Lights",
+      "price": 30.00,
+      "original_price": null,
+      "discount": null,
+      "image": a6
+    },
+    {
+      "name": "Lug White Spoke Wheel",
+      "price": 80.00,
+      "original_price": null,
+      "discount": null,
+      "image": a3
+    },
+    {
+      "name": "Storage Large Tool Box",
+      "price": 60.00,
+      "original_price": null,
+      "discount": null,
+      "image": a4
+    },
+    {
+      "name": "Daily Maintenance Hardware",
+      "price": 50.00,
+      "original_price": null,
+      "discount": null,
+      "image": a7
+    },{
+      "name": "Waterproof Seat Protector",
+      "price": 25.00,
+      "original_price": null,
+      "discount": null,
+      "image": a1
+    },
+    {
+      "name": "HP BOSS CRATE ENGINE",
+      "price": 2500.00,
+      "original_price": null,
+      "discount": null,
+      "image": a5
+    },
+  ]
+  
+
 
   return (
     <>
@@ -257,19 +342,59 @@ const Home = () => {
         {/* ================ Section 5 ==================== */}
         <div className="home_section5_container">
           <div className="home_section5 max-w-[1600px] mx-auto">
-                <div className="box">
-                  <div className="view">
-                    <h3>Top Sellers</h3>
-                    <Link to={'/sellers'}>View All <LiaAngleRightSolid/></Link>
+            <div className="box">
+              <div className="view">
+                <h3>Top Sellers</h3>
+                <Link to={'/sellers'}>View All <LiaAngleRightSolid /></Link>
+              </div>
+              <div className="slab">
+                {
+                  seller.map((item, index) => (
+                    <SellerCard key={index} logo={item.logo} banner={item.banner} name={item.name} rating={item.rating} reviews={item.reviews} products={item.products} />
+                  ))
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* ================ Section 6 ==================== */}
+        <div className="home_section6_container">
+          <div className="home_section6 max-w-[1600px] mx-auto">
+            <div className="left">
+              <h3>DEAL OF THE DAY</h3>
+              {
+                dod.map((item, index) => (
+                  <div className="card" key={index}>
+                    <div className="top">
+                      <img src={item.image} alt="" />
+                      <div className="discount">{item.discount}</div>
+                    </div>
+                    <div className="bottom">
+                      <h4>{item.name}</h4>
+                      <div className="price">
+                        <small>₹{item.mrp}</small>
+                        <span>₹{item.price}</span>
+                      </div>
+                      <Button className='bg-[#2196f3]'>BUY NOW</Button>
+                    </div>
                   </div>
-                  <div className="slab">
-                    {
-                      seller.map((item, index) => (
-                        <SellerCard key={index} logo={item.logo} banner={item.banner} name={item.name} rating={item.rating} reviews={item.reviews} products={item.products}/>
-                      ))
-                    }
-                  </div>
-                </div>
+                ))
+              }
+            </div>
+            <div className="right">
+              <div className="view">
+                <h3>Latests Products</h3>
+                <Link to='/products'>View All <LiaAngleRightSolid/></Link>
+              </div>
+
+              <div className="boxes">
+                {
+                  latestProduct.map((item, index) => (
+                    <LatestProduct key={index} price={item.price} name={item.name} mrp={item.original_price} discount={item.discount} image={item.image}/>
+                  ))
+                }
+              </div>
+            </div>
           </div>
         </div>
       </div>
