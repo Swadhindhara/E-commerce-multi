@@ -1,0 +1,109 @@
+.seller_card{
+    border: 1px solid #a6d4fa;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+    .top{
+        img{
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+            height: 80px;
+            object-fit: cover;
+        }
+    }
+    .bottom{
+        border-top: 1px solid #a6d4fa;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+
+        .details{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: -40px;
+
+            .icon{
+                width: 90px;
+                height: 90px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+                background-color: #fff;
+
+                img{
+                    width: 80px;
+                }
+            }
+
+            .content{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0px;
+                margin-top: 20px;
+
+                h3{
+                    font-size: 20px;
+                    font-weight: 400;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 1;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+
+                .rating{
+                    display: flex;
+                    align-items: center;
+                    font-size: 14px;
+                    gap: 2px;
+
+                    svg{
+                        width: 12px;
+                        height: 12px;
+                        color: orange;
+                    }
+
+                    small{
+                        color: #808080;
+                    }
+                }
+            }
+        }
+
+        .buttons{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .switch{
+                width: calc(50% - 5px);
+                background-color: #ebebeb;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 4px;
+                padding: 6px;
+                border-radius: 5px;
+                font-weight: 300;
+                font-size: 14px;
+
+                span{
+                    color: #2196f3;
+                    font-weight: 600;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    &:hover{
+        box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;    }
+}
