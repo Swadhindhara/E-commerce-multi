@@ -34,8 +34,10 @@ import b2 from '../../assets/images/b2.webp'
 import b3 from '../../assets/images/b3.webp'
 import b4 from '../../assets/images/b4.webp'
 import b5 from '../../assets/images/b5.webp'
+import b6 from '../../assets/images/b6.webp'
+import b7 from '../../assets/images/b7.webp'
 import './Home.scss';
-import { FeaturedCard, LatestProduct, SellerCard } from '@/_components';
+import { FeaturedCard, FooterBox, LatestProduct, SecureBox, SellerCard } from '@/_components';
 import { Link } from 'react-router-dom';
 import { LiaAngleRightSolid } from "react-icons/lia";
 import { Button } from '@/components/ui/button';
@@ -229,7 +231,7 @@ const Home = () => {
       "original_price": null,
       "discount": null,
       "image": a7
-    },{
+    }, {
       "name": "Waterproof Seat Protector",
       "price": 25.00,
       "original_price": null,
@@ -244,7 +246,7 @@ const Home = () => {
       "image": a5
     },
   ]
-  
+
 
 
   return (
@@ -384,17 +386,89 @@ const Home = () => {
             <div className="right">
               <div className="view">
                 <h3>Latests Products</h3>
-                <Link to='/products'>View All <LiaAngleRightSolid/></Link>
+                <Link to='/products'>View All <LiaAngleRightSolid /></Link>
               </div>
 
               <div className="boxes">
                 {
                   latestProduct.map((item, index) => (
-                    <LatestProduct key={index} price={item.price} name={item.name} mrp={item.original_price} discount={item.discount} image={item.image}/>
+                    <LatestProduct key={index} price={item.price} name={item.name} mrp={item.original_price} discount={item.discount} image={item.image} />
                   ))
                 }
               </div>
             </div>
+          </div>
+        </div>
+        {/* ================ Section 7 ==================== */}
+        <div className="home_section7_container">
+          <div className="home_section7 max-w-[1600px] mx-auto">
+            <div className="left">
+              <img src={b6} alt="image" />
+            </div>
+            <div className="right">
+              <img src={b7} alt="image" />
+            </div>
+          </div>
+        </div>
+        {/* ================ Section 8 ==================== */}
+        <div className="home_section8_container">
+          <div className="home_section8 mx-auto max-w-[1600px]">
+            <div className="boxes">
+              <div className="view">
+                <h3>women&apos;s fashion</h3>
+                <Link to={'/products'}>View All <LiaAngleRightSolid /></Link>
+              </div>
+              <div className="slab">
+                {
+                  featuredProducts.slice(0, 6).map((product, index) => (
+                    <FeaturedCard key={index} image={product.image} price={product.price} title={product.title} />
+                  ))
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* ================ Section 9 =================== */}
+        <div className="home_section8_container">
+          <div className="home_section8 mx-auto max-w-[1600px]">
+            <div className="boxes">
+              <div className="view">
+                <h3>Electronics & Gadgets</h3>
+                <Link to={'/products'}>View All <LiaAngleRightSolid /></Link>
+              </div>
+              <div className="slab">
+                {
+                  featuredProducts.slice(0, 6).map((product, index) => (
+                    <FeaturedCard key={index} image={product.image} price={product.price} title={product.title} />
+                  ))
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* ================ Section 10 =================== */}
+        <div className="home_section8_container">
+          <div className="home_section8 mx-auto max-w-[1600px]">
+            <div className="boxes">
+              <div className="view">
+                <h3>Home & Kitchen</h3>
+                <Link to={'/products'}>View All <LiaAngleRightSolid /></Link>
+              </div>
+              <div className="slab">
+                {
+                  featuredProducts.slice(0, 6).map((product, index) => (
+                    <FeaturedCard key={index} image={product.image} price={product.price} title={product.title} />
+                  ))
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* ================ Section 11 ================== */}
+        <div className="home_section11_container">
+          <div className="home_section11 mx-auto max-w-[1600px]">
+                <SecureBox/>
+                <FooterBox/>
           </div>
         </div>
       </div>

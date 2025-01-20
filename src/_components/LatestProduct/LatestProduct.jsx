@@ -11,12 +11,13 @@ const LatestProduct = ({ image, discount, mrp, price, name }) => {
                         <FaEye/>
                     </div>
                 </div>
-                <div className="discount">{discount}</div>
+                {discount && <div className="discount">{discount}</div>}
+                {/* <div className="discount">{discount}</div> */}
             </div>
             <div className="bottom">
                 <p>{name}</p>
                 <div className="price">
-                    <small>₹{mrp}</small>
+                    {mrp && <small>₹{mrp}</small>}
                     <span>₹{price}</span>
                 </div>
             </div>
