@@ -24,8 +24,17 @@ import a15 from '../../assets/images/a15.webp'
 import a16 from '../../assets/images/a16.webp'
 import a17 from '../../assets/images/a17.webp'
 import a18 from '../../assets/images/a18.webp'
+import a19 from '../../assets/images/a19.webp'
+import a20 from '../../assets/images/a20.webp'
+import a21 from '../../assets/images/a21.webp'
+import a22 from '../../assets/images/a22.webp'
+import b1 from '../../assets/images/b1.webp'
+import b2 from '../../assets/images/b2.webp'
+import b3 from '../../assets/images/b3.webp'
+import b4 from '../../assets/images/b4.webp'
+import b5 from '../../assets/images/b5.webp'
 import './Home.scss';
-import { FeaturedCard } from '@/_components';
+import { FeaturedCard, SellerCard } from '@/_components';
 import { Link } from 'react-router-dom';
 import { LiaAngleRightSolid } from "react-icons/lia";
 const Home = () => {
@@ -117,6 +126,41 @@ const Home = () => {
     },
   ]
 
+  const seller = [
+    {
+      name: "FootStore",
+      rating: "5",
+      reviews: "2",
+      products: "12",
+      logo: a22,
+      banner: b3
+    },
+    {
+      name: "Phone Store",
+      rating: "5",
+      reviews: "2",
+      products: "12",
+      logo: a21,
+      banner: b2
+    },
+    {
+      name: "FootStore",
+      rating: "5",
+      reviews: "2",
+      products: "12",
+      logo: a19,
+      banner: b4
+    },
+    {
+      name: "FootStore",
+      rating: "5",
+      reviews: "2",
+      products: "12",
+      logo: a20,
+      banner: b5
+    },
+  ]
+
 
   return (
     <>
@@ -200,6 +244,32 @@ const Home = () => {
                 }
               </div>
             </div>
+          </div>
+        </div>
+        {/* ================ Section 4 =====================*/}
+        <div className="home_section4_container">
+          <div className="home_section4 max-w-[1600px] mx-auto">
+            <Link>
+              <img src={b1} alt="" />
+            </Link>
+          </div>
+        </div>
+        {/* ================ Section 5 ==================== */}
+        <div className="home_section5_container">
+          <div className="home_section5 max-w-[1600px] mx-auto">
+                <div className="box">
+                  <div className="view">
+                    <h3>Top Sellers</h3>
+                    <Link to={'/sellers'}>View All <LiaAngleRightSolid/></Link>
+                  </div>
+                  <div className="slab">
+                    {
+                      seller.map((item, index) => (
+                        <SellerCard key={index} logo={item.logo} banner={item.banner} name={item.name} rating={item.rating} reviews={item.reviews} products={item.products}/>
+                      ))
+                    }
+                  </div>
+                </div>
           </div>
         </div>
       </div>
